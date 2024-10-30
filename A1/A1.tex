@@ -1,0 +1,150 @@
+% this template is an adaption of:
+% https://www.overleaf.com/latex/templates/template-for-theoretische-informatik-uni-tubingen/xwsycshfkjtf
+
+
+% change for each exercise
+\newcommand{\NUMBER}{1}
+\newcommand{\EXERCISES}{3}
+
+% only once
+\newcommand{\COURSE}{Artificial Intelligence, Winter Semester \the\year{}}
+\newcommand{\STUDENTA}{first student}
+\newcommand{\STUDENTB}{second student}
+
+
+% keep as is --------------------------------------------------------
+\documentclass[a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{polynom}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{forloop}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usepackage{algpseudocode,algorithm,algorithmicx}
+
+\input kvmacros
+\geometry{a4paper,left=3cm, right=3cm, top=3cm, bottom=3cm}
+
+% headline
+\def\header#1{
+	\begin{center}
+		{\Large Assignment Sheet #1}
+	\end{center}
+}
+
+% point table
+\newcounter{punktelistectr}
+\newcounter{punkte}
+\newcommand{\punkteliste}[2]{%
+	\setcounter{punkte}{#2}%
+	\addtocounter{punkte}{-#1}%
+	\stepcounter{punkte}%<-- also punkte = m-n+1 = Anzahl Spalten[1]
+	\begin{center}%
+		\begin{tabularx}{\linewidth}[]{@{}*{\thepunkte}{>{\centering\arraybackslash} X|}@{}>{\centering\arraybackslash}X}
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				\thepunktelistectr &
+			}
+			#2 &  $\Sigma$ \\
+			\hline
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+			\forloop{punktelistectr}{#1}{\value{punktelistectr} < #2 } %
+			{%
+				&
+			} &\\
+		\end{tabularx}
+	\end{center}
+}
+
+% header / footer
+\pagestyle {fancy}
+\fancyhead[L]{\COURSE}
+\fancyhead[C]{}
+\fancyhead[R]{\today}
+
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{Page \thepage /\pageref*{LastPage}}
+
+\begin{document}
+	
+% don't change
+\begin{tabularx}{\linewidth}{m{0.2 \linewidth}X}
+	\begin{minipage}{\linewidth}
+		\STUDENTA\\
+		\STUDENTB
+	\end{minipage} & \begin{minipage}{\linewidth}
+		\punkteliste{1}{\EXERCISES}
+	\end{minipage}\\
+\end{tabularx}
+
+\header{Nr. \NUMBER}
+% -------------------------------------------------------------------
+	
+
+% your solution
+
+
+\section*{Question 1}
+
+	\subsection*{a)}
+% Please add the following required packages to your document preamble:
+% \usepackage[table,xcdraw]{xcolor}
+% Beamer presentation requires \usepackage{colortbl} instead of \usepackage[table,xcdraw]{xcolor}
+\begin{table}[H]
+	\begin{tabular}{|l|l|l|l|l|l|}
+	\hline
+	\rowcolor[HTML]{C0C0C0} 
+	{\color[HTML]{000000} Enviroment} &
+	  {\color[HTML]{000000} Observable} &
+	  {\color[HTML]{000000} Deterministic} &
+	  {\color[HTML]{000000} Static} &
+	  {\color[HTML]{000000} Discrete} &
+	  {\color[HTML]{000000} Number Agents} \\ \hline
+	\cellcolor[HTML]{EFEFEF}Tennis           & fully  & deterministic & dynamic & continuous & multi  \\ \hline
+	\cellcolor[HTML]{EFEFEF}Weather Forecast & partly & stochastic    & dynamic & continuous & single \\ \hline
+	\cellcolor[HTML]{EFEFEF}Tic-Tac-Toe      & fully  & deterministic & semi    & discrete   & multi  \\ \hline
+	\cellcolor[HTML]{EFEFEF}Cake             & fully  & deterministic & static  & discrete   & single \\ \hline
+	\end{tabular}
+	\end{table}
+	\begin{itemize}
+		\item Tennis $\rightarrow$ When playing Tennis, u play against someone.
+		\item Weather Forecast $\rightarrow$ Weather forecast doesn't need a
+		second agent to forecast the weather out of the given information.
+		\item Tic-Tac-Toe $\rightarrow$ For playing tictactoe, there are 2
+		players needed.
+		\item Cake $\rightarrow$ Baking a cake can be done alone. 
+	\end{itemize}
+\section*{Question 2}
+	\begin{itemize}
+		\item False: Just because the agent doens't know everything, doesn't
+		mean that the agent isn't rational. The agent can still be rational with
+		given information like in a card game.
+		\item False: A agent as a autonomous taxi driver cannot be perfectly
+		rational when doing the task 'baking' because the PEAS is completly
+		different. 
+		\item False: The agent can loose if the opponent has a better hand.
+		\item True: Every action performed, doesn't matter what the actions do,
+		will be rewarded. 
+	\end{itemize}
+\end{document}
+
