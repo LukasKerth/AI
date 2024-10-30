@@ -58,10 +58,15 @@ class Polynomial:
             )
             leadingterm_exp = remainder_degree - divisor_degree
             result = Polynomial(' ')
-            result.coefficients[leadingterm_exp] = result.coefficients.get(leadingterm_exp, 0) + leadingterm_coeff
-            quotient = quotient + result
-            remainder = remainder.update_remainder(result)
+            result.coefficients[leadingterm_exp] = leadingterm_coeff
+            quotient += result
+            temp = divisor * result
+            remainder -= temp
+            remainder.clean_up()
         return quotient, remainder
+
+    def clean_up(self):
+        self.coefficients = {exp: coeff for exp, coeff in self.coefficients.items() if coeff != 0}
 
     def copy(self):
         new = Polynomial(' ')
@@ -69,6 +74,8 @@ class Polynomial:
         return new
 
     def degree(self):
+        if not self.coefficients:
+            return -1
         temp = self.coefficients.keys()
         return max(temp)
 
@@ -82,10 +89,9 @@ class Polynomial:
 
     def __sub__(self, other):
         result = Polynomial(' ')
-        for (exp, coeff), (e, c) in zip(self.coefficients.items(), other.coefficients.items()):
-            degree_self = self.degree()
+        for exp, coeff in self.coefficients.items():
             result.coefficients[exp] = coeff
-        for (exp, coeff) in other.coefficients.items():
+        for exp, coeff in other.coefficients.items():
             result.coefficients[exp] = result.coefficients.get(exp, 0) - coeff
         return result
 
