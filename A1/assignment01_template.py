@@ -49,7 +49,7 @@ class Polynomial:
     def long_division(dividend, divisor):
         quotient = Polynomial(' ')
         remainder = dividend.copy()
-        while remainder.degree() >= divisor.degree():
+        while remainder.degree() >= divisor.degree() and remainder.coefficients:
             remainder_degree = remainder.degree()
             divisor_degree = divisor.degree()
             leadingterm_coeff = (
@@ -93,12 +93,14 @@ class Polynomial:
             result.coefficients[exp] = coeff
         for exp, coeff in other.coefficients.items():
             result.coefficients[exp] = result.coefficients.get(exp, 0) - coeff
+        result.clean_up()
         return result
 
     def update_remainder(self, result):
         self.coefficients.pop(self.degree())
         for exp, coeff in result.coefficients.items():
             self.coefficients[exp] = coeff
+        result.clean_up()
         return self
 
 
@@ -106,7 +108,8 @@ class Polynomial:
         result = Polynomial(' ')
         for (exp, coeff) in self.coefficients.items():
             for (e, c) in other.coefficients.items():
-                result.coefficients[exp + e] = result.coefficients.get(exp + e, 0) + coeff * c
+                result.coefficients[exp + e] = result.coefficients.get(exp + e, 0) + (coeff * c)
+        result.clean_up()
         return result
 
 
@@ -114,14 +117,9 @@ def polynomial_gcd(p: Polynomial, q: Polynomial):
     """Compute the greatest common divisor of two polynomials using Euclid's
     algorithm."""
     # TODO
-    if not p:
-        return q
-    if not q:
-        return p
     while q.coefficients:
-        _,r = Polynomial.long_division(p, q)
-        print(r)
-        p,q = q,r
+        _,remainder = Polynomial.long_division(p, q)
+        p,q = q,remainder
     return p
 
 
@@ -138,10 +136,10 @@ if __name__ == "__main__":
 
     gcd = polynomial_gcd(p1, p2)
     print(f"The GCD of {p1} and {p2} is: {gcd}")
+    p3 = Polynomial("x^3 +    5x^2 -9x +3")
+    p4 = Polynomial("x^3 - 7 x^2 +9x    -3")
     print(
         polynomial_gcd(
-            Polynomial("x^3 +    5x^2 -9x +3"), Polynomial("x^3 - 7 x^2 +9x    -3")
+            p3, p4
         )
     )
-
-
