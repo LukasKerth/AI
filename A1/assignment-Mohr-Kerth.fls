@@ -1,7 +1,7 @@
-PWD c:\Users\Lukas\OneDrive\Tuebingen-Uni\Semester6\AI\A1
+PWD c:\Users\Lukas\OneDrive\Tuebingen-Uni\Semester6\AI\AI\A1
 INPUT C:\Users\Lukas\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Lukas\OneDrive\Tuebingen-Uni\Semester6\AI\A1\A1.tex
-OUTPUT A1.log
+INPUT c:\Users\Lukas\OneDrive\Tuebingen-Uni\Semester6\AI\AI\A1\assignment-Mohr-Kerth.tex
+OUTPUT assignment-Mohr-Kerth.log
 INPUT C:\Program Files\MiKTeX\tex\latex\koma-script\scrartcl.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\koma-script\scrartcl.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\koma-script\scrkbase.sty
@@ -293,10 +293,10 @@ INPUT C:\Program Files\MiKTeX\tex\latex\algorithms\algorithm.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\karnaugh\kvmacros.tex
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\A1.aux
-INPUT .\A1.aux
-INPUT A1.aux
-OUTPUT A1.aux
+INPUT .\assignment-Mohr-Kerth.aux
+INPUT .\assignment-Mohr-Kerth.aux
+INPUT assignment-Mohr-Kerth.aux
+OUTPUT assignment-Mohr-Kerth.aux
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Program Files\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -305,14 +305,14 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\A1.out
-INPUT .\A1.out
-INPUT A1.out
-INPUT A1.out
-INPUT .\A1.out
-INPUT .\A1.out
-OUTPUT A1.out
-OUTPUT A1.pdf
+INPUT .\assignment-Mohr-Kerth.out
+INPUT .\assignment-Mohr-Kerth.out
+INPUT assignment-Mohr-Kerth.out
+INPUT assignment-Mohr-Kerth.out
+INPUT .\assignment-Mohr-Kerth.out
+INPUT .\assignment-Mohr-Kerth.out
+OUTPUT assignment-Mohr-Kerth.out
+OUTPUT assignment-Mohr-Kerth.pdf
 INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bookmark.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\bookmark\bkm-pdftex.def
@@ -348,9 +348,9 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\Lukas\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT A1.aux
-INPUT .\A1.out
-INPUT .\A1.out
+INPUT assignment-Mohr-Kerth.aux
+INPUT .\assignment-Mohr-Kerth.out
+INPUT .\assignment-Mohr-Kerth.out
 INPUT C:\Users\Lukas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\Lukas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
