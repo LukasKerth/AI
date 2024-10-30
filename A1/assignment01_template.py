@@ -32,7 +32,6 @@ class Polynomial:
 
 # Example usage:
     def __repr__(self):
-        # TODO
         terms = []
         for exponent, coefficient in sorted(self.coefficients.items(), reverse=True):
             # :+d makes sure that the sign will be included
@@ -96,14 +95,6 @@ class Polynomial:
         result.clean_up()
         return result
 
-    def update_remainder(self, result):
-        self.coefficients.pop(self.degree())
-        for exp, coeff in result.coefficients.items():
-            self.coefficients[exp] = coeff
-        result.clean_up()
-        return self
-
-
     def __mul__(self, other):
         result = Polynomial(' ')
         for (exp, coeff) in self.coefficients.items():
@@ -116,7 +107,10 @@ class Polynomial:
 def polynomial_gcd(p: Polynomial, q: Polynomial):
     """Compute the greatest common divisor of two polynomials using Euclid's
     algorithm."""
-    # TODO
+    if not p: 
+        return q
+    if not q: 
+        return p
     while q.coefficients:
         _,remainder = Polynomial.long_division(p, q)
         p,q = q,remainder
